@@ -1,0 +1,12 @@
+/Users/gis/Projects/k8s/rust-frontend-backend-k8s/backend/target/debug/deps/libhttparse-c2d071818af0f405.rmeta: /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/lib.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/iter.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/macros.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/mod.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/swar.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/sse42.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/avx2.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/runtime.rs
+
+/Users/gis/Projects/k8s/rust-frontend-backend-k8s/backend/target/debug/deps/httparse-c2d071818af0f405.d: /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/lib.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/iter.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/macros.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/mod.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/swar.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/sse42.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/avx2.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/runtime.rs
+
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/lib.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/iter.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/macros.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/mod.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/swar.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/sse42.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/avx2.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/httparse-1.10.1/src/simd/runtime.rs:

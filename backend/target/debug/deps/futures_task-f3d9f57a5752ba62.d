@@ -1,0 +1,11 @@
+/Users/gis/Projects/k8s/rust-frontend-backend-k8s/backend/target/debug/deps/libfutures_task-f3d9f57a5752ba62.rmeta: /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/lib.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/spawn.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/arc_wake.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/waker.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/waker_ref.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/future_obj.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/noop_waker.rs
+
+/Users/gis/Projects/k8s/rust-frontend-backend-k8s/backend/target/debug/deps/futures_task-f3d9f57a5752ba62.d: /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/lib.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/spawn.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/arc_wake.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/waker.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/waker_ref.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/future_obj.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/noop_waker.rs
+
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/lib.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/spawn.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/arc_wake.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/waker.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/waker_ref.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/future_obj.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.31/src/noop_waker.rs:

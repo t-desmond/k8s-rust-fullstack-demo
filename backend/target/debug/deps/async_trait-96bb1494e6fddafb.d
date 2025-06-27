@@ -1,0 +1,12 @@
+/Users/gis/Projects/k8s/rust-frontend-backend-k8s/backend/target/debug/deps/libasync_trait-96bb1494e6fddafb.dylib: /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/lib.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/args.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/bound.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/expand.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/lifetime.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/parse.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/receiver.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/verbatim.rs
+
+/Users/gis/Projects/k8s/rust-frontend-backend-k8s/backend/target/debug/deps/async_trait-96bb1494e6fddafb.d: /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/lib.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/args.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/bound.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/expand.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/lifetime.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/parse.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/receiver.rs /Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/verbatim.rs
+
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/lib.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/args.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/bound.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/expand.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/lifetime.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/parse.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/receiver.rs:
+/Users/gis/.cargo/registry/src/index.crates.io-6f17d22bba15001f/async-trait-0.1.88/src/verbatim.rs:

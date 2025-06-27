@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K8s Rust Frontend</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-white text-xl font-bold">K8s Rust App</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="navigateTo('home')" class="nav-link text-white hover:text-blue-200 px-3 py-2 rounded-md text-sm font-medium">Home</button>
+                    <button onclick="navigateTo('deploy')" class="nav-link text-white hover:text-blue-200 px-3 py-2 rounded-md text-sm font-medium">Deploy</button>
+                    <button onclick="navigateTo('status')" class="nav-link text-white hover:text-blue-200 px-3 py-2 rounded-md text-sm font-medium">Status</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Home Page -->
+        <div id="home-page" class="page-content">
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Welcome to K8s Rust Application</h2>
+                    <p class="text-gray-600 mb-6">This is a simple demonstration of a Rust backend with a modern frontend, designed for Kubernetes deployment.</p>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-blue-700">
+                                    Backend Status: <span id="backend-status" class="font-medium">Checking...</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
+                            <h3 class="text-lg font-semibold mb-2">Rust Backend</h3>
+                            <p class="text-blue-100">High-performance backend built with Rust and Axum</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-lg p-6 text-white">
+                            <h3 class="text-lg font-semibold mb-2">Modern Frontend</h3>
+                            <p class="text-green-100">Responsive UI with Tailwind CSS and vanilla JavaScript</p>
+                        </div>
+                        <div class="bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg p-6 text-white">
+                            <h3 class="text-lg font-semibold mb-2">Kubernetes Ready</h3>
+                            <p class="text-purple-100">Containerized and ready for cloud deployment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deploy Page -->
+        <div id="deploy-page" class="page-content hidden">
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Deployment</h2>
+                    <p class="text-gray-600 mb-6">Manage your Kubernetes deployment configuration.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-lg font-medium text-gray-900 mb-2">Current Configuration</h3>
+                            <div class="text-sm text-gray-600">
+                                <p><strong>Backend:</strong> Rust service on port 3000</p>
+                                <p><strong>Frontend:</strong> Nginx on port 80</p>
+                                <p><strong>Namespace:</strong> default</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <button onclick="deployApplication()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                Deploy Application
+                            </button>
+                            <button onclick="checkDeployment()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                                Check Status
+                            </button>
+                        </div>
+                        
+                        <div id="deploy-result" class="mt-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Page -->
+        <div id="status-page" class="page-content hidden">
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">System Status</h2>
+                    <p class="text-gray-600 mb-6">Monitor the health and status of your application components.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Backend Service</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Status:</span>
+                                    <span id="backend-health" class="text-yellow-600 font-medium">Checking...</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Response Time:</span>
+                                    <span id="backend-response-time" class="text-gray-900">-</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Last Check:</span>
+                                    <span id="backend-last-check" class="text-gray-900">-</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white border border-gray-200 rounded-lg p-6">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Frontend Service</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Status:</span>
+                                    <span class="text-green-600 font-medium">Online</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Version:</span>
+                                    <span class="text-gray-900">1.0.0</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Uptime:</span>
+                                    <span id="frontend-uptime" class="text-gray-900">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button onclick="refreshStatus()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Refresh Status
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

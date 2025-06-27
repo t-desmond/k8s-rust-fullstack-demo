@@ -1,0 +1,16 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Rust Backend K8s Project",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 8080 -c-1",
+    "build": "echo 'No build step needed for static files'"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "keywords": ["frontend", "kubernetes", "rust"],
+  "author": "",
+  "license": "MIT"
+} 

@@ -1,0 +1,14 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    container_name: rust-backend
+    ports:
+      - "3000:3000"
+  frontend:
+    build: ./frontend
+    container_name: simple-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend

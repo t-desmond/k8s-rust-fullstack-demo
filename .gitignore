@@ -1,0 +1,29 @@
+# Rust
+/target/
+**/*.rs.bk
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+
+# Archives
+*.tar
+*.zip
+*.gz
+
+# Logs
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Misc
+*.bak
+*.tmp
+
+# Docker
+*.pid 

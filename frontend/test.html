@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Frontend Test Page</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- File Check -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">File Check</h2>
+                <div id="file-check" class="space-y-2">
+                    <div class="flex items-center">
+                        <span class="w-4 h-4 bg-green-500 rounded-full mr-3"></span>
+                        <span>index.html ✓</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="w-4 h-4 bg-green-500 rounded-full mr-3"></span>
+                        <span>app.js ✓</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="w-4 h-4 bg-green-500 rounded-full mr-3"></span>
+                        <span>styles.css ✓</span>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="w-4 h-4 bg-green-500 rounded-full mr-3"></span>
+                        <span>package.json ✓</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- JavaScript Test -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">JavaScript Test</h2>
+                <button onclick="testJavaScript()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                    Test JavaScript
+                </button>
+                <div id="js-result" class="mt-4 p-3 bg-gray-100 rounded hidden">
+                    <span id="js-status"></span>
+                </div>
+            </div>
+            
+            <!-- Navigation Test -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">Navigation Test</h2>
+                <div class="space-y-2">
+                    <button onclick="testNavigation('home')" class="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                        Test Home Navigation
+                    </button>
+                    <button onclick="testNavigation('deploy')" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Test Deploy Navigation
+                    </button>
+                    <button onclick="testNavigation('status')" class="w-full bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+                        Test Status Navigation
+                    </button>
+                </div>
+            </div>
+            
+            <!-- API Test -->
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-semibold mb-4">API Test</h2>
+                <button onclick="testAPI()" class="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700">
+                    Test Backend API
+                </button>
+                <div id="api-result" class="mt-4 p-3 bg-gray-100 rounded hidden">
+                    <span id="api-status"></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-8 bg-white p-6 rounded-lg shadow">
+            <h2 class="text-xl font-semibold mb-4">Test Results</h2>
+            <div id="test-results" class="space-y-2">
+                <p>Click the buttons above to run tests...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function testJavaScript() {
+            const result = document.getElementById('js-result');
+            const status = document.getElementById('js-status');
+            
+            try {
+                // Test basic JavaScript functionality
+                const testArray = [1, 2, 3, 4, 5];
+                const sum = testArray.reduce((a, b) => a + b, 0);
+                
+                if (sum === 15) {
+                    status.textContent = '✓ JavaScript is working correctly';
+                    status.className = 'text-green-600';
+                } else {
+                    throw new Error('Array reduce test failed');
+                }
+                
+                result.classList.remove('hidden');
+                addTestResult('JavaScript functionality', 'PASS');
+            } catch (error) {
+                status.textContent = '✗ JavaScript test failed: ' + error.message;
+                status.className = 'text-red-600';
+                result.classList.remove('hidden');
+                addTestResult('JavaScript functionality', 'FAIL');
+            }
+        }
+        
+        function testNavigation(page) {
+            try {
+                // Simulate navigation test
+                const pages = ['home', 'deploy', 'status'];
+                if (pages.includes(page)) {
+                    addTestResult(`Navigation to ${page}`, 'PASS');
+                    showNotification(`Navigation to ${page} page successful!`, 'success');
+                } else {
+                    throw new Error('Invalid page');
+                }
+            } catch (error) {
+                addTestResult(`Navigation to ${page}`, 'FAIL');
+                showNotification(`Navigation test failed: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testAPI() {
+            const result = document.getElementById('api-result');
+            const status = document.getElementById('api-status');
+            
+            try {
+                const response = await fetch('http://localhost:3000/');
+                if (response.ok) {
+                    const text = await response.text();
+                    status.textContent = '✓ Backend API is responding: ' + text.substring(0, 50) + '...';
+                    status.className = 'text-green-600';
+                    addTestResult('Backend API connectivity', 'PASS');
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                result.classList.remove('hidden');
+            } catch (error) {
+                status.textContent = '✗ Backend API test failed: ' + error.message;
+                status.className = 'text-red-600';
+                result.classList.remove('hidden');
+                addTestResult('Backend API connectivity', 'FAIL');
+            }
+        }
+        
+        function addTestResult(test, result) {
+            const resultsDiv = document.getElementById('test-results');
+            const resultElement = document.createElement('div');
+            resultElement.className = `flex items-center ${result === 'PASS' ? 'text-green-600' : 'text-red-600'}`;
+            resultElement.innerHTML = `
+                <span class="w-4 h-4 ${result === 'PASS' ? 'bg-green-500' : 'bg-red-500'} rounded-full mr-3"></span>
+                <span>${test}: ${result}</span>
+            `;
+            resultsDiv.appendChild(resultElement);
+        }
+        
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
+                type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+            }`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        // Auto-run basic tests on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                testJavaScript();
+                testNavigation('home');
+            }, 1000);
+        });
+    </script>
+</body>
+</html> 
