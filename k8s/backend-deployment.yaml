@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: rust-backend
-          image: rust-frontend-backend-k8s_backend
+          image: k8s-rust-fullstack-demo_backend
           imagePullPolicy: Never
           ports:
             - containerPort: 3000
@@ -24,3 +24,8 @@ spec:
                 configMapKeyRef:
                   name: app-config
                   key: greeting
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: app-secret
+                  key: password

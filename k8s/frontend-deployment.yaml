@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: simple-frontend
-          image: rust-frontend-backend-k8s_frontend
+          image: k8s-rust-fullstack-demo_frontend
           imagePullPolicy: Never
           ports:
             - containerPort: 80

@@ -2,15 +2,27 @@ use axum::{
     routing::get,
     Router,
     Json,
+    extract::State,
 };
 use serde_json::{json, Value};
 use std::net::SocketAddr;
 use tokio::net::TcpListener;
 use std::time::{SystemTime, UNIX_EPOCH};
 use tower_http::cors::{CorsLayer, Any};
+use std::sync::Arc;
+
+struct AppState {
+    greeting: String,
+    password: String,
+}
 
 #[tokio::main]
 async fn main() {
+    // Read environment variables
+    let greeting = std::env::var("GREETING").unwrap_or("Hello from Rust Backend!".to_string());
+    let password = std::env::var("PASSWORD").unwrap_or("not_set".to_string());
+    let state = Arc::new(AppState { greeting, password });
+
     // Configure CORS
     let cors = CorsLayer::new()
         .allow_origin(Any)
@@ -18,10 +30,12 @@ async fn main() {
         .allow_headers(Any);
 
     let app = Router::new()
-        .route("/", get(|| async { "Hello from Rust Backend!" }))
+        .route("/", get(root))
         .route("/health", get(health_check))
         .route("/status", get(status))
         .route("/deploy", get(deploy_status))
+        .route("/secret", get(secret))
+        .with_state(state)
         .layer(cors);  // attach CORS middleware here
 
     let addr = SocketAddr::from(([0, 0, 0, 0], 3000));
@@ -34,7 +48,13 @@ async fn main() {
     .unwrap();
 }
 
+async fn root(State(state): State<Arc<AppState>>) -> String {
+    state.greeting.clone()
+}
 
+async fn secret(State(state): State<Arc<AppState>>) -> Json<Value> {
+    Json(json!({ "password": state.password }))
+}
 
 async fn health_check() -> Json<Value> {
     Json(json!({
