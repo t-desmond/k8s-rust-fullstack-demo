@@ -1,0 +1,2 @@
+helm/** linguist-vendored
+*.tpl linguist-vendored
